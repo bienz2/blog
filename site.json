@@ -1,0 +1,23 @@
+{
+  "title": "Amanda Bienz",
+  "subtitle": "Assistant Professor in the Department of Computer Science at the University of New Mexico",
+  "owner": {
+    "name": "Amanda Bienz",
+    "email": "bienz@unm.edu"
+  },
+  "social": {
+    "github": "bienz2",
+    "linkedin": "amanda-bienz-b3444037"
+  },
+  "seo": {
+    "title": "Amanda Bienz",
+    "description": "Blog of a CS Professor",
+    "author": "Amanda Bienz",
+    "keywords": [
+      "blog",
+      "developer blog",
+      "research blog"
+    ]
+  },
+  "cname": "amandabienz.com"
+}
