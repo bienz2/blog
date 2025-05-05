@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Automatically Compile and Deploy Latex Documents"
 categories: [website, automation]
 ---
