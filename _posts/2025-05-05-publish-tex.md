@@ -11,10 +11,14 @@ The steps below allow you to automatically push all Latex updates to publicly av
     a. Click Add file + Create new file
     b. Name the file ".github/workflows/publish.yml"
 4. Give the workflow a name:
+
 ```
 name: Compile and Deploy
 ```
+
 5. Decide when you want new PDFs to be complied.  For instance, I only want to re-run the latex compilation when a new file is pushed to my Homework folder, and only on the main branch:
+
+
 ```
 on:
   push:
@@ -23,14 +27,22 @@ on:
     paths:
       - 'Homework/**'
 ```
+
+
 6.You need to give the workflow the appropriate permissions for the PDF to be deployed to github pages:
+
+
 ```
 permissions:
   contents: write
   pages: write
   id-token: write
 ```
+
+
 7. Whenever the workflow runs, you need to gain access to latex.  While you can compile latex from scratch, this is time consuming.  I highly recommend using the existing docker container `xu-cheng/latex-action@v3`.  You need to pass the root file (such as main.tex) that you want to compile and deploy.  I want to compile all written and coding assignments, so I have listed a number of files:
+
+
 ```
 jobs:
   build_latex:
@@ -58,7 +70,11 @@ jobs:
             Homework/hw5.tex
           latexmk_use_xelatex: false
 ```
+
+
 8. I want to move the compiled PDFs into a folder called `files` so that I can deploy all PDFs within a single folder:
+
+
 ```
       - name: Move PDFs to files folder
         run: |
@@ -67,6 +83,8 @@ jobs:
 ```
 
 9. Finally, I want to setup GitHub pages, upload the PDFs, and deploy the pages:
+
+
 ```
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v5
@@ -79,8 +97,10 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v4
 ```
+
+
 10. After compiling, you won't automatically see the PDFs.  You need to go to your GitHub repository Settings, click on `Pages` on the left hand side, and select `Deploy from a branch` under Source.  Then, select the branch as gh-pages.
 
 11. Finally, your PDFs are live.  You can view them at https://<orgname>.github.io/<reponame>/<filename>.pdf.  For example, my file `code1.tex` is available at https://ProfessorBienz.github.io/CS481/code1.pdf.  (Note, this reroutes you to teaching.amandabienz.com/CS481/code1.pdf because I have rerouted ProfessorBienz.github.io to my own custom domain.  For more information on this process, check out the blog post TODO).
 
-The full workflow for my CS481 repository is available here: ![My Workflow File](/assets/publish.yml)
+The full workflow for my CS481 repository is available at https://github.com/bienz2/blog/blob/main/assets/publish.yml.

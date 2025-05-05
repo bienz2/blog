@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Professor Bienz Blog
+title: Professor Bienz's Blog Posts
 ---
 
 <h2 class="text-center my-4">Blog Posts</h2>
@@ -11,4 +11,3 @@ title: Professor Bienz Blog
     </li>
   {% endfor %}
 </ul>
-
