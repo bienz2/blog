@@ -26,10 +26,9 @@ url: "http://www.amandabienz.com/blog" # the base hostname & protocol for your s
 github_username:  bienz2
 
 # Build settings
-#theme: minima
-remote_theme: pages-themes/hacker@v0.2.0
+theme: minima
 plugins:
-- jekyll-remote-theme
+  - jekyll-feed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
