@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Bienz Blog
+title: Professor Bienz Blog
 ---
 
 Welcome to my blog!
