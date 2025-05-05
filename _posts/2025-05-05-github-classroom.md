@@ -106,6 +106,7 @@ set(src_SOURCES
     e. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
 
 ```
+
 #include "src.hpp"
 
 // Fill in this method to complete Homework 1, Part 1
@@ -114,9 +115,11 @@ void run_processes()
 {
 
 }
+
 ```
 
 ```
+
 #include "src.hpp"
 
 // Priority Scheduling 
@@ -133,6 +136,7 @@ void priority(int n_jobs, Job* jobs)
 void priority_rr(int n_jobs, Job* jobs, int time_slice)
 {
 }
+
 ```
 
     f. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
