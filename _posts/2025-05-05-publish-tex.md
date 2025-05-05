@@ -83,4 +83,4 @@ jobs:
 
 11. Finally, your PDFs are live.  You can view them at https://<orgname>.github.io/<reponame>/<filename>.pdf.  For example, my file `code1.tex` is available at https://ProfessorBienz.github.io/CS481/code1.pdf.  (Note, this reroutes you to teaching.amandabienz.com/CS481/code1.pdf because I have rerouted ProfessorBienz.github.io to my own custom domain.  For more information on this process, check out the blog post TODO).
 
-The full workflow for my CS481 repository is available here: ![My Workflow File](/assets/publish.yml)
+The full workflow for my CS481 repository is available at https://github.com/bienz2/blog/blob/main/assets/publish.yml.
