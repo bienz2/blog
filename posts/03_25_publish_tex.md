@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "Automatically Compile and Deploy Latex Documents"
 date: 2025-03-28
 categories: [website, automation]
@@ -24,8 +23,7 @@ on:
       - main
     paths:
       - 'Homework/**'
-
-  workflow_dispatch:```
+```
 6.You need to give the workflow the appropriate permissions for the PDF to be deployed to github pages:
 ```
 permissions:
