@@ -277,6 +277,13 @@ pre code {
   font-size: inherit;
   color: inherit;
   word-break: normal;
+  display: block;
+  background-color: #f8f9fa; /* light gray */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e0e0e0;
+  overflow-x: auto;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 code {
