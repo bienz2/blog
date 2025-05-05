@@ -137,7 +137,7 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 12. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
 13. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding in step 8).
 
-14. Finally, you can add your assignments to GitHub Vlassroom https://classroom.github.com
+14. Finally, you can add your assignments to GitHub Classroom https://classroom.github.com
 15. Create a new classroom if you do not already have one
 16. Create a new assignment, choose a deadline, and point it to your templated repository from step 3. 
 17. **Make sure to select that the repository should be private so that students cannot see eachother's work.**
