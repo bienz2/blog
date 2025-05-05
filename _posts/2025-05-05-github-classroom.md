@@ -20,8 +20,7 @@ Steps to creating a GitHub Classroom Assignment:
 [submodule "OSHomeworkSource"]
 	path = OSHomeworkSource
 	url = https://github.com/ProfessorBienz/OSHomeworkSource.git
-        branch = homework1_src
-```
+        branch = homework1_src```
 
     - Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
 
