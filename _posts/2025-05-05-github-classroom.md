@@ -144,12 +144,12 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 18. Click to copy only the default branch so that they do not have to worry about merging branches.
 19. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
 20. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  
-    ![Starter Code](../assets/github_classroom/starter_code.png)
+    ![Starter Code](https://github.com/bienz2/blog/blob/main/assets/github_classroom/starter_code.png)
 21. You need to change the default branch of this repository:
         - Click Settings click the button with -> and <- to switch to a new branch.  Select the branch that corresponds to this homework.
-    ![Switch Branch](../assets/github_classroom/switch_branch.png)
+    ![Switch Branch]([../assets/github_classroom/switch_branch.png](https://github.com/bienz2/blog/blob/main/assets/github_classroom/switch_branch.png))
 23. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
-    ![Assignment Link](../assets/github_classroom/assignment_link.png)
+    ![Assignment Link]([../assets/github_classroom/assignment_link.png](https://github.com/bienz2/blog/blob/main/assets/github_classroom/assignment_link.png))
 25. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 
 26. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
