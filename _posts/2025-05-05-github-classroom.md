@@ -11,21 +11,20 @@ Steps to creating a GitHub Classroom Assignment:
 2. I highly recommend creating a second organization for all Github classroom content so that your normal account doesn't get flooded with student repositories.  I use ProfessorBienz for this https://github.com/ProfessorBienz.
 3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  Here is my repository for Operating Systems: https://github.com/ProfessorBienz/OSHomework.
 4. Create an additional public repository for all of your work.  Once a student forks a main repository, it is very difficult to get them any changes (for instance if you find a bug in some code or want to add an additional test).  However, if this second repository is a submodule within their forked repo and all updates are pushed to this submodule repository, they automatically get updates.  **This also stops them from editing test files to get around the autograder.  They cannot make any edits to the submodule.**
-5. For each homework assignment:
-    - Create a new branch for both the main repo from step three corresponding to this homework
-    - Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
-    - Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
+6. Create a new branch for both the main repo from step three corresponding to this homework
+7. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
+8. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
 
 ```
 [submodule "OSHomeworkSource"]
 	path = OSHomeworkSource
 	url = https://github.com/ProfessorBienz/OSHomeworkSource.git
-        branch = homework1_src```
-
-    - Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
-
+        branch = homework1_src
 ```
 
+9. Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
+
+```
 # Sets Minimum Allowed CMake Version 
 cmake_minimum_required(VERSION 2.8)
 
@@ -87,7 +86,6 @@ add_subdirectory(${SOURCE_NAME}/tests)
 
 # Subdirectory with Example Programs
 add_subdirectory(examples)
-
 ```
 
 And within the submodule I have a second one for compiling files that students are not able to change:
@@ -103,10 +101,9 @@ set(src_SOURCES
 ```
 
 
-    e. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
+10. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
 
 ```
-
 #include "src.hpp"
 
 // Fill in this method to complete Homework 1, Part 1
@@ -115,11 +112,9 @@ void run_processes()
 {
 
 }
-
 ```
 
 ```
-
 #include "src.hpp"
 
 // Priority Scheduling 
@@ -136,23 +131,22 @@ void priority(int n_jobs, Job* jobs)
 void priority_rr(int n_jobs, Job* jobs, int time_slice)
 {
 }
-
 ```
 
-    f. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
-    g. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
-    h. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding in step 8).
+11. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
+12. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
+13. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding in step 8).
 
-6. Finally, you can add your assignments to GitHub Vlassroom https://classroom.github.com
-    a. Create a new classroom if you do not already have one
-    b. Create a new assignment, choose a deadline, and point it to your templated repository from step 3. 
-    c. **Make sure to select that the repository should be private so that students cannot see eachother's work.**
-    d. Click to copy only the default branch so that they do not have to worry about merging branches.
-    e. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
-    f. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  You need to change the default branch of this repository:
+14. Finally, you can add your assignments to GitHub Vlassroom https://classroom.github.com
+15. Create a new classroom if you do not already have one
+16. Create a new assignment, choose a deadline, and point it to your templated repository from step 3. 
+17. **Make sure to select that the repository should be private so that students cannot see eachother's work.**
+18. Click to copy only the default branch so that they do not have to worry about merging branches.
+19. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
+20. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  You need to change the default branch of this repository:
         - Click Settings click the button with -> and <- to switch to a new branch.  Select the branch that corresponds to this homework.
-    g. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
+21. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
 
-7. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
+22. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 
-8. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
+23. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
