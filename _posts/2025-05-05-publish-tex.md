@@ -102,6 +102,6 @@ jobs:
 
 10. After compiling, you won't automatically see the PDFs.  You need to go to your GitHub repository Settings, click on `Pages` on the left hand side, and select `Deploy from a branch` under Source.  Then, select the branch as gh-pages.
 
-11. Finally, your PDFs are live.  You can view them at https://<orgname>.github.io/<reponame>/<filename>.pdf.  For example, my file `code1.tex` is available at https://ProfessorBienz.github.io/CS481/code1.pdf.  (Note, this reroutes you to teaching.amandabienz.com/CS481/code1.pdf because I have rerouted ProfessorBienz.github.io to my own custom domain.  For more information on this process, check out the blog post TODO).
+11. Finally, your PDFs are live.  You can view them at https://your-org-name.github.io/your-repo-name/your-file-name.pdf.  For example, my file `code1.tex` is available at https://ProfessorBienz.github.io/CS481/code1.pdf.  (Note, this reroutes you to teaching.amandabienz.com/CS481/code1.pdf because I have rerouted ProfessorBienz.github.io to my own custom domain.  For more information on this process, check out the blog post TODO).
 
 The full workflow for my CS481 repository is available at https://github.com/bienz2/blog/blob/main/assets/publish.yml.
