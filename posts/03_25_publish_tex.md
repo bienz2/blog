@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Automatically Compile and Deploy Latex Documents"
 date: 2025-03-28
 categories: [website, automation]
