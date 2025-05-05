@@ -12,9 +12,9 @@ Steps to creating a GitHub Classroom Assignment:
 3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  Here is my repository for Operating Systems: https://github.com/ProfessorBienz/OSHomework.
 4. Create an additional public repository for all of your work.  Once a student forks a main repository, it is very difficult to get them any changes (for instance if you find a bug in some code or want to add an additional test).  However, if this second repository is a submodule within their forked repo and all updates are pushed to this submodule repository, they automatically get updates.  **This also stops them from editing test files to get around the autograder.  They cannot make any edits to the submodule.**
 5. For each homework assignment:
-    a. Create a new branch for both the main repo from step three corresponding to this homework
-    b. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
-    c. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
+	a. Create a new branch for both the main repo from step three corresponding to this homework
+	b. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
+	c. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
 
 ```
 
