@@ -7,9 +7,9 @@ categories: [teaching, grading, automation]
 All of my upperclass/graduate classes use GitHub classroom autograding to provide students with automatic feedback on their work.  
 
 Steps to creating a GitHub Classroom Assignment:
-1. Register for an education account: https://github.com/education/teachers.  This gives you a number of GitHub Action hours for students to use (e.g. compiling and testing their code on GitHub Classroom).  
-2. I highly recommend creating a second organization for all Github classroom content so that your normal account doesn't get flooded with student repositories.  I use ProfessorBienz for this https://github.com/ProfessorBienz.
-3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  Here is my repository for Operating Systems: https://github.com/ProfessorBienz/OSHomework.
+1. Register for an education account [here](https://github.com/education/teachers).  This gives you a number of GitHub Action hours for students to use (e.g. compiling and testing their code on GitHub Classroom).  
+2. I highly recommend creating a second organization for all Github classroom content so that your normal account doesn't get flooded with student repositories.  I use [ProfessorBienz](https://github.com/ProfessorBienz) for this.
+3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  [Here is my repository for Operating Systems](https://github.com/ProfessorBienz/OSHomework).
 4. Create an additional public repository for all of your work.  Once a student forks a main repository, it is very difficult to get them any changes (for instance if you find a bug in some code or want to add an additional test).  However, if this second repository is a submodule within their forked repo and all updates are pushed to this submodule repository, they automatically get updates.  **This also stops them from editing test files to get around the autograder.  They cannot make any edits to the submodule.**
 ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/submodule.png)
 
@@ -92,19 +92,6 @@ add_subdirectory(${SOURCE_NAME}/tests)
 add_subdirectory(examples)
 ```
 
-And within the submodule I have a second one for compiling files that students are not able to change:
-
-```
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-
-set(src_SOURCES
-    ${SOURCE_NAME}/src.hpp
-    ${SOURCE_NAME}/src.cpp
-    PARENT_SCOPE
-    )
-```
-
-
 9. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
 
 ```
@@ -153,7 +140,7 @@ cmake -DCMAKE_BUILD_TYPE=Debug ..
 make
 ```
 
-13. Finally, you can add your assignments to GitHub Classroom https://classroom.github.com
+13. Finally, you can add your assignments to [GitHub Classroom](https://classroom.github.com).
 14. Create a new classroom if you do not already have one
 15. Create a new assignment and choose the deadline. 
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/create_assignment.png)
@@ -175,4 +162,23 @@ make
 
 23. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 
-24. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
+24. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test.
+
+25. I find it helpful for the students to have a tutorial assignment that exposes them to the basics of CMake and Github.  Feel free to use the repo and instructions below as a starting point:
+	- [Repo](https://github.com/ProfessorBienz/GitHub-Classroom-Tutorial?tab=readme-ov-file)
+ 	- [Instructions](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/tutorial.pdf)
+  	- [Additional Instructions wrt Github Tokens](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/token.pdf)
+
+26. I write instructions for all of my homeworks in Overleaf and automatically deploy the associated PDFs online for students.  You can check any of them out at the following links.  [More info on automatically deploying latex to PDFs here](http://amandabienz.com/blog/website/automation/2025/05/05/publish-tex.html).
+	- [Coding Assignment 1](http://teaching.amandabienz.com/CS481/code1.pdf)
+ 	- [Written Assignment 1](http://teaching.amandabienz.com/CS481/hw1.pdf) 
+	- [Coding Assignment 2](http://teaching.amandabienz.com/CS481/code2.pdf)
+ 	- [Written Assignment 2](http://teaching.amandabienz.com/CS481/hw2.pdf) 
+	- [Coding Assignment 3](http://teaching.amandabienz.com/CS481/code3.pdf)
+ 	- [Written Assignment 3](http://teaching.amandabienz.com/CS481/hw3.pdf)
+	- [Coding Assignment 4](http://teaching.amandabienz.com/CS481/code4.pdf)
+ 	- [Written Assignment 4](http://teaching.amandabienz.com/CS481/hw4.pdf)
+   	- [Coding Assignment 5](http://teaching.amandabienz.com/CS481/code5.pdf)
+ 	- [Written Assignment 5](http://teaching.amandabienz.com/CS481/hw5.pdf) 
+
+
