@@ -166,8 +166,8 @@ Steps to creating a GitHub Classroom Assignment:
 
 25. I find it helpful for the students to have a tutorial assignment that exposes them to the basics of CMake and Github.  Feel free to use the repo and instructions below as a starting point:
 	- [Repo](https://github.com/ProfessorBienz/GitHub-Classroom-Tutorial?tab=readme-ov-file)
- 	- [Instructions](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/tutorial.pdf)
-  	- [Additional Instructions wrt Github Tokens](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/token.pdf)
+	- [Instructions](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/tutorial.pdf)
+	- [Additional Instructions wrt Github Tokens](http://teaching.amandabienz.com/GitHub-Classroom-Tutorial/token.pdf)
 
 26. I write instructions for all of my homeworks in Overleaf and automatically deploy the associated PDFs online for students.  You can check any of them out at the following links.  [More info on automatically deploying latex to PDFs here](http://amandabienz.com/blog/website/automation/2025/05/05/publish-tex.html).
 	- [Coding Assignment 1](http://teaching.amandabienz.com/CS481/code1.pdf)
