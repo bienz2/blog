@@ -28,101 +28,101 @@ Steps to creating a GitHub Classroom Assignment:
 
 8. Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
 
-```
-# Sets Minimum Allowed CMake Version 
-cmake_minimum_required(VERSION 2.8)
-
-# Project Name 
-project(homework)
-set(SOURCE_NAME "OSHomeworkSource")
-
-# Sets Language to C++, Uses C++11
-enable_language(CXX)
-set(CMAKE_CXX_STANDARD 11)
-
-# Release Build : Compiles Optimized Code
-set(CMAKE_BUILD_TYPE Release)
-
-# Adds Compile Warnings
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wredundant-decls -Wcast-align -Wshadow")
-
-# Will Include Files in Current Directory
-set(hw_INCDIR ${CMAKE_CURRENT_SOURCE_DIR})
-set(src_DIR ${CMAKE_CURRENT_SOURCE_DIR}/${SOURCE_NAME})
-
-##################### 
-## GOOGLETEST      ##
-#####################
-include(FetchContent)
-if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.5)
-    set(GTEST_TAG 58d77fa8070e8cec2dc1ed015d66b454c8d78850)
-else()
-    set(GTEST_TAG e2239ee6043f73722e7aa812a459f54a28552929)
-endif()
-FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  # Specify the commit you depend on and update it regularly.
-  GIT_TAG ${GTEST_TAG} 
-)
-# For Windows: Prevent overriding the parent project's compiler/linker settings
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-enable_testing()
-#####################
-
-include_directories(${src_DIR})
-include_directories(${hw_DIR})
-
-# Add SRC Directory with Professor's Starter Code
-add_subdirectory(${SOURCE_NAME})
-
-# Create Library
-# TODO : Include your new file here!
-add_library(homework STATIC
-    ${src_SOURCES}
-    processes.cpp
-    scheduler.cpp
+    ```
+    # Sets Minimum Allowed CMake Version 
+    cmake_minimum_required(VERSION 2.8)
+    
+    # Project Name 
+    project(homework)
+    set(SOURCE_NAME "OSHomeworkSource")
+    
+    # Sets Language to C++, Uses C++11
+    enable_language(CXX)
+    set(CMAKE_CXX_STANDARD 11)
+    
+    # Release Build : Compiles Optimized Code
+    set(CMAKE_BUILD_TYPE Release)
+    
+    # Adds Compile Warnings
+    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wredundant-decls -Wcast-align -Wshadow")
+    
+    # Will Include Files in Current Directory
+    set(hw_INCDIR ${CMAKE_CURRENT_SOURCE_DIR})
+    set(src_DIR ${CMAKE_CURRENT_SOURCE_DIR}/${SOURCE_NAME})
+    
+    ##################### 
+    ## GOOGLETEST      ##
+    #####################
+    include(FetchContent)
+    if (CMAKE_VERSION VERSION_GREATER_EQUAL 3.5)
+        set(GTEST_TAG 58d77fa8070e8cec2dc1ed015d66b454c8d78850)
+    else()
+        set(GTEST_TAG e2239ee6043f73722e7aa812a459f54a28552929)
+    endif()
+    FetchContent_Declare(
+      googletest
+      GIT_REPOSITORY https://github.com/google/googletest.git
+      # Specify the commit you depend on and update it regularly.
+      GIT_TAG ${GTEST_TAG} 
     )
+    # For Windows: Prevent overriding the parent project's compiler/linker settings
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(googletest)
+    enable_testing()
+    #####################
+    
+    include_directories(${src_DIR})
+    include_directories(${hw_DIR})
 
-# Add Directory with Professor's Unit Tests
-add_subdirectory(${SOURCE_NAME}/tests)
-
-# Subdirectory with Example Programs
-add_subdirectory(examples)
-```
+    # Add SRC Directory with Professor's Starter Code
+    add_subdirectory(${SOURCE_NAME})
+    
+    # Create Library
+    # TODO : Include your new file here!
+    add_library(homework STATIC
+        ${src_SOURCES}
+        processes.cpp
+        scheduler.cpp
+    )
+    
+    # Add Directory with Professor's Unit Tests
+    add_subdirectory(${SOURCE_NAME}/tests)
+    
+    # Subdirectory with Example Programs
+    add_subdirectory(examples)
+    ```
 
 9. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
 
-```
-#include "src.hpp"
-
-// Fill in this method to complete Homework 1, Part 1
-// Method is called by 'parent' process
-void run_processes()
-{
-
-}
-```
-
-```
-#include "src.hpp"
-
-// Priority Scheduling 
-//   -- Jobs with highest priority (lowest number) run first
-//   -- If multiple jobs with same priority, lowest index runs first
-void priority(int n_jobs, Job* jobs)
-{
-}
-
-// Priority Scheduling with Round Robin 
-//    -- Jobs with highest priority (lowest number) run first
-//    -- If multiple jobs have same priority, run all in round robin 
-//    -- Time slice for round robin passed as a parameter
-void priority_rr(int n_jobs, Job* jobs, int time_slice)
-{
-}
-```
+    ```
+    #include "src.hpp"
+    
+    // Fill in this method to complete Homework 1, Part 1
+    // Method is called by 'parent' process
+    void run_processes()
+    {
+    
+    }
+    ```
+    
+    ```
+    #include "src.hpp"
+    
+    // Priority Scheduling 
+    //   -- Jobs with highest priority (lowest number) run first
+    //   -- If multiple jobs with same priority, lowest index runs first
+    void priority(int n_jobs, Job* jobs)
+    {
+    }
+    
+    // Priority Scheduling with Round Robin 
+    //    -- Jobs with highest priority (lowest number) run first
+    //    -- If multiple jobs have same priority, run all in round robin 
+    //    -- Time slice for round robin passed as a parameter
+    void priority_rr(int n_jobs, Job* jobs, int time_slice)
+    {
+    }
+    ```
 
 10. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
 11. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
@@ -130,15 +130,15 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 
 12. I like to provide students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding).
 
-```
-git submodule init
-git submodule update --remote
-
-mkdir build
-cd build
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-make
-```
+    ```
+    git submodule init
+    git submodule update --remote
+    
+    mkdir build
+    cd build
+    cmake -DCMAKE_BUILD_TYPE=Debug ..
+    make
+    ```
 
 13. Finally, you can add your assignments to [GitHub Classroom](https://classroom.github.com).
 14. Create a new classroom if you do not already have one
