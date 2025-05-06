@@ -7,7 +7,7 @@ categories: [teaching, grading, automation]
 All of my upperclass/graduate classes use GitHub classroom autograding to provide students with automatic feedback on their work.  
 
 Steps to creating a GitHub Classroom Assignment:
-1. Register for an education account [here](https://github.com/education/teachers).  This gives you a number of GitHub Action hours for students to use (e.g. compiling and testing their code on GitHub Classroom).  
+1. Register for an education account [here](https://github.com/education/teachers).  This provides GitHub Actions minutes for students to use (e.g. compiling and testing their code on GitHub Classroom).  
 2. I highly recommend creating a second organization for all Github classroom content so that your normal account doesn't get flooded with student repositories.  I use [ProfessorBienz](https://github.com/ProfessorBienz) for this.
 3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  [Here is my repository for Operating Systems](https://github.com/ProfessorBienz/OSHomework).
 4. Create an additional public repository for all of your work.  Once a student forks a main repository, it is very difficult to get them any changes (for instance if you find a bug in some code or want to add an additional test).  However, if this second repository is a submodule within their forked repo and all updates are pushed to this submodule repository, they automatically get updates.  **This also stops them from editing test files to get around the autograder.  They cannot make any edits to the submodule.**
@@ -155,14 +155,14 @@ make
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/starter_code.png)
 
 21. You need to change the default branch of this repository:
-        - Click Settings click the button with -> and <- to switch to a new branch.  Select the branch that corresponds to this homework.
+        - Go to Settings and switch the default branch.  Select the branch that corresponds to this homework.
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
 22. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/assignment_link.png)
 
 23. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 
-24. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test.
+24. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it is more obvious to students that their code did not compile if there is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test.
 
 25. I find it helpful for the students to have a tutorial assignment that exposes them to the basics of CMake and Github.  Feel free to use the repo and instructions below as a starting point:
 	- [Repo](https://github.com/ProfessorBienz/GitHub-Classroom-Tutorial?tab=readme-ov-file)
