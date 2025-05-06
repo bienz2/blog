@@ -144,13 +144,13 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 17. Click to copy only the default branch so that they do not have to worry about merging branches.
 18. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
 19. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  
-    ![Starter Code](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/starter_code.png)
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/starter_code.png)
 
 20. You need to change the default branch of this repository:
         - Click Settings click the button with -> and <- to switch to a new branch.  Select the branch that corresponds to this homework.
-    ![Switch Branch](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
 21. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
-    ![Assignment Link](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/assignment_link.png)
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/assignment_link.png)
 
 22. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 

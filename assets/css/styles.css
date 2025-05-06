@@ -11034,3 +11034,15 @@ p {
 .address strong {
   font-size: 1.2rem;
 }
+
+
+img[alt="imgfluid"] {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+}
