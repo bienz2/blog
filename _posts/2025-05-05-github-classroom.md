@@ -27,7 +27,7 @@ Steps to creating a GitHub Classroom Assignment:
     ```
 
 8. Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
-
+    
     ```
     # Sets Minimum Allowed CMake Version 
     cmake_minimum_required(VERSION 2.8)
@@ -91,7 +91,7 @@ Steps to creating a GitHub Classroom Assignment:
     # Subdirectory with Example Programs
     add_subdirectory(examples)
     ```
-
+    
 9. Add any template files to the outermost folder.  For instance, for Homework 1, I give students two files that they are to complete during the assignment:
 
     ```
