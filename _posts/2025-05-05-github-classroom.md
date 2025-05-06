@@ -135,23 +135,38 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 
 10. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
 11. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
-12. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding in step 8).
+12. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding).
+
+```
+git submodule init
+git submodule update --remote
+
+mkdir build
+cd build
+cmake -DCMAKE_BUILD_TYPE=Debug ..
+make
+```
 
 13. Finally, you can add your assignments to GitHub Classroom https://classroom.github.com
 14. Create a new classroom if you do not already have one
-15. Create a new assignment, choose a deadline, and point it to your templated repository from step 3. 
-16. **Make sure to select that the repository should be private so that students cannot see eachother's work.**
-17. Click to copy only the default branch so that they do not have to worry about merging branches.
-18. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
-19. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  
+15. Create a new assignment and choose the deadline. 
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/create_assignment.png)
+
+16. Point to your templated repository.
+17. **Make sure to select that the repository should be private so that students cannot see eachother's work.**
+18. Click to copy only the default branch so that they do not have to worry about merging branches.
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/initial_settings.png)
+
+19. I recommend coming back to add unit tests later.  Sometimes Github Classroom crashes if you take too long adding unit tests and you have to start step 6 over.
+20. You now have a new assignment.  Click on the link near that top that follows `Starter code from...`.  
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/starter_code.png)
 
-20. You need to change the default branch of this repository:
+21. You need to change the default branch of this repository:
         - Click Settings click the button with -> and <- to switch to a new branch.  Select the branch that corresponds to this homework.
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
-21. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
+22. Go back to your GitHub Classroom assignment.  Copy the provided link (also available at the top, to the left of `run tests`).  This is the link you should provide to your students.
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/assignment_link.png)
 
-22. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
+23. I like to try the assignment out before giving it to the students.  If you paste the link you just copied, you can access the assignment.
 
-23. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
+24. Adding autograder tests: Click on 'edit' near the top of your github classroom homework.  You can add any tests you would like.  I usually create one test for 0 points that solely compiles their code, because it makes it more obvious to the students that their code did not compile if their is a GitHub Action labeled 'compile code' that fails.  I typically run `compile.sh` in this test.  You can then add one test that does `make test` to test all unit tests, however this will cause students to get either a 0 or 100.  Typically, I break up each unit test here and give a few points per test. 
