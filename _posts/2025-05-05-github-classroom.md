@@ -171,14 +171,14 @@ make
 
 26. I write instructions for all of my homeworks in Overleaf and automatically deploy the associated PDFs online for students.  You can check any of them out at the following links.  [More info on automatically deploying latex to PDFs here](http://amandabienz.com/blog/website/automation/2025/05/05/publish-tex.html).
 	- [Coding Assignment 1](http://teaching.amandabienz.com/CS481/code1.pdf)
- 	- [Written Assignment 1](http://teaching.amandabienz.com/CS481/hw1.pdf) 
+	- [Written Assignment 1](http://teaching.amandabienz.com/CS481/hw1.pdf) 
 	- [Coding Assignment 2](http://teaching.amandabienz.com/CS481/code2.pdf)
- 	- [Written Assignment 2](http://teaching.amandabienz.com/CS481/hw2.pdf) 
+	- [Written Assignment 2](http://teaching.amandabienz.com/CS481/hw2.pdf) 
 	- [Coding Assignment 3](http://teaching.amandabienz.com/CS481/code3.pdf)
- 	- [Written Assignment 3](http://teaching.amandabienz.com/CS481/hw3.pdf)
+	- [Written Assignment 3](http://teaching.amandabienz.com/CS481/hw3.pdf)
 	- [Coding Assignment 4](http://teaching.amandabienz.com/CS481/code4.pdf)
- 	- [Written Assignment 4](http://teaching.amandabienz.com/CS481/hw4.pdf)
-   	- [Coding Assignment 5](http://teaching.amandabienz.com/CS481/code5.pdf)
- 	- [Written Assignment 5](http://teaching.amandabienz.com/CS481/hw5.pdf) 
+	- [Written Assignment 4](http://teaching.amandabienz.com/CS481/hw4.pdf)
+	- [Coding Assignment 5](http://teaching.amandabienz.com/CS481/code5.pdf)
+	- [Written Assignment 5](http://teaching.amandabienz.com/CS481/hw5.pdf) 
 
 
