@@ -14,7 +14,7 @@ Steps to creating a GitHub Classroom Assignment:
 ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/submodule.png)
 
 5. Create a new branch for both the main repo from step three corresponding to this homework
-![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
+![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/homework_branches.png)
 
 6. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
 7. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
