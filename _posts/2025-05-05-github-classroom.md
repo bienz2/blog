@@ -128,7 +128,7 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 11. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
     ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/source_code.png)
 
-12. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding).
+12. I like to provide students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding).
 
 ```
 git submodule init
