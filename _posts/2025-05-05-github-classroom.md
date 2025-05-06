@@ -11,7 +11,11 @@ Steps to creating a GitHub Classroom Assignment:
 2. I highly recommend creating a second organization for all Github classroom content so that your normal account doesn't get flooded with student repositories.  I use ProfessorBienz for this https://github.com/ProfessorBienz.
 3. Create a new public Github repository for your class.  Go to Settings and check that this is a `template repository`.  This is the repository that students will fork.  Here is my repository for Operating Systems: https://github.com/ProfessorBienz/OSHomework.
 4. Create an additional public repository for all of your work.  Once a student forks a main repository, it is very difficult to get them any changes (for instance if you find a bug in some code or want to add an additional test).  However, if this second repository is a submodule within their forked repo and all updates are pushed to this submodule repository, they automatically get updates.  **This also stops them from editing test files to get around the autograder.  They cannot make any edits to the submodule.**
+![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/submodule.png)
+
 5. Create a new branch for both the main repo from step three corresponding to this homework
+![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/switch_branch.png)
+
 6. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
 7. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
 
@@ -135,6 +139,8 @@ void priority_rr(int n_jobs, Job* jobs, int time_slice)
 
 10. Add all code that they cannot touch to the submodule repository.  I usually create two files, `src.cpp` and `src.hpp` containing all code that they can use but not edit.
 11. Create unit tests for autograder.  I create a `tests` folder within the submodule and add all unit tests there.  **Make sure these are within the submodule so that students cannot edit them to automatically pass all tests.**
+    ![imgfluid](https://raw.githubusercontent.com/bienz2/blog/main/assets/github_classroom/source_code.png)
+
 12. I like to provide by students with a `compile.sh` bash script that automatically pulls the latest submodule and compiles their code (it makes it easier for them to compile and also for classroom autograding).
 
 ```
