@@ -19,12 +19,12 @@ Steps to creating a GitHub Classroom Assignment:
 6. Add the submodule repo to the main repo with `git submodule add ...` if it does not already exist
 7. Change your .gitmodules file to automatically checkout the correct branch of the submodule.  Here is an example:
 
- ```
- [submodule "OSHomeworkSource"]
- 	path = OSHomeworkSource
- 	url = https://github.com/ProfessorBienz/OSHomeworkSource.git
-        branch = homework1_src
- ```
+    ```
+    [submodule "OSHomeworkSource"]
+ 	   path = OSHomeworkSource
+ 	   url = https://github.com/ProfessorBienz/OSHomeworkSource.git
+           branch = homework1_src
+    ```
 
 8. Add your CMakeLists.txt.  I usually add the outermost one to the main repo and a secondary to the submodule repo.  However, you can put this all within the submodule if you want to prevent students from touching it.  Here is my outermost CMakeLists.txt:
 
